@@ -1,0 +1,14 @@
+{{ extend './common/layout.art' }}
+
+{{ block 'content'}}
+    <p class="bg-danger error">{{ msg }}</p>
+{{ /block}}
+
+{{ block 'js' }}
+	<script type="text/javascript">
+		setTimeout(function () {
+			location.href = '/admin/login';
+		}, 3000)
+	</script>
+{{ /block }}
+
