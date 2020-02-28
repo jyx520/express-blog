@@ -61,7 +61,14 @@ app.use((err, req, res, next) => {
     // 将字符串对象转换为对象类型
     // JSON.parse()
     const result = JSON.parse(err);
-    res.redirect(`${ result.path }?message=${ result.message }`);
+    // { path: '/admin/user-edit', message:'密码比对失败, 不能对用户信息的修改', id:id}
+    params = [];
+    for(let attr in result) {
+        if(attr != 'path') {
+            params.push(attr + "=" + result[attr]);
+        }
+    }
+    res.redirect(`${ result.path }?${ params.join('&') }`);
 });
 
 // 监听端口

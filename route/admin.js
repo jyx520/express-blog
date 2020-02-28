@@ -20,6 +20,7 @@ admin.get('/user-edit', require('./admin/userEdit'));
 
 // 实现用户添加功能
 admin.post('/user-edit', require('./admin/userAdd'));
+admin.post('/user-modify', require('./admin/userModify'));
 
 
 
