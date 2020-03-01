@@ -1,6 +1,10 @@
 const { User } = require('../../model/user');
 
 module.exports = async (req, res) => {
+
+    // 标识 表示当前页面访问的是用户管理页面
+    req.app.locals.currentLink = 'user';
+
     // console.log(req.query);
     const { message, id} = req.query;
     // 如果传递了id参数 说明是修改操作

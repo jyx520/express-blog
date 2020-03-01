@@ -24,10 +24,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 // 配置session
 app.use(session({
         secret: 'leDhhUU/u3HYQHDdH8JBblN0Jyhu4Fy9IMXEiilM8yDxLVETJkN7+WWZi+gSTIvN',
-        resave: false,
-        saveUninitialized: true,
+        resave: true,
+        saveUninitialized: false,
         cookie: {
-            maxAge: 60*1000,
+            maxAge: 60*10000000,
             httpOnly: true,
         }
     }));

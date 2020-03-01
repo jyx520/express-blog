@@ -22,6 +22,15 @@ admin.get('/user-edit', require('./admin/userEdit'));
 admin.post('/user-edit', require('./admin/userAdd'));
 admin.post('/user-modify', require('./admin/userModify'));
 
+// 删除用户功能
+admin.get('/delete', require('./admin/userDeleted'));
+
+// 文章列表页面
+admin.get('/article', require('./admin/article'));
+
+// 文章编辑页面
+admin.get('/article-edit', require('./admin/article-edit'));
+
 
 
 module.exports = admin;

@@ -2,6 +2,10 @@
 const { User } = require('../../model/user');
 
 module.exports = async (req, res) => {
+
+    // 标识 表示当前页面访问的是用户管理页面
+    req.app.locals.currentLink = 'user';
+
     // 总页数 = Math.ceil(总数据条数 / 每页显示的数据条数)
     // 当前页要转换为数据条数的开始位置 数据的开始位置 =  (当前页 - 1)* 每页显示的数据条数
     // 接收客户端传递过来的当前也参数
